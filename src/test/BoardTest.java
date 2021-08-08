@@ -13,7 +13,7 @@ class BoardTest {
 
     @BeforeEach
     void setUp() {
-        board = new BoardImpl();
+        board = new BoardImpl("C:\\Users\\Magnus\\IdeaProjects\\SudokuSolver\\src\\sudoku\\Sudoku1.txt");
     }
 
     @Test

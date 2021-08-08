@@ -9,16 +9,15 @@ import java.util.Map;
 public class BoardImpl implements Board {
     private Map<Position, Integer> boardIntegerMap;
 
-    public BoardImpl() {
-
-        ArrayList<Integer> list = FileReader.readFile("C:\\Users\\Magnus\\IdeaProjects\\SudokuSolver\\src\\sudoku\\Sudoku1.txt");
-        BoardMapConstructor boardMapConstructor = new BoardMapConstructor();
-        this.boardIntegerMap = boardMapConstructor.setUpIntegerMap(list);
+    public BoardImpl(ArrayList<Integer> list) {
+        BoardMapBuilder boardMapBuilder = new BoardMapBuilder();
+        this.boardIntegerMap = boardMapBuilder.setUpIntegerMap(list);
     }
 
-    public BoardImpl(ArrayList<Integer> list) {
-        BoardMapConstructor boardMapConstructor = new BoardMapConstructor();
-        this.boardIntegerMap = boardMapConstructor.setUpIntegerMap(list);
+    public BoardImpl(String pathName) {
+        ArrayList<Integer> list = SudokuReader.readFile(pathName);
+        BoardMapBuilder boardMapBuilder = new BoardMapBuilder();
+        this.boardIntegerMap = boardMapBuilder.setUpIntegerMap(list);
     }
 
     public Map<Position, Integer> getBoardIntegerMap() {

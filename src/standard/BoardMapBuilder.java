@@ -3,7 +3,7 @@ package standard;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class BoardMapConstructor {
+public class BoardMapBuilder {
     public void boardMapFactory(){
 
     }

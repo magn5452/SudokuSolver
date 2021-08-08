@@ -4,20 +4,20 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public final class FileReader {
-    private static final FileReader INSTANCE = new FileReader();
+public final class SudokuReader {
+    private static final SudokuReader INSTANCE = new SudokuReader();
 
-    public static FileReader getInstance() {
+    public static SudokuReader getInstance() {
         return INSTANCE;
     }
-    public FileReader(){}
+    public SudokuReader(){}
 
     public static ArrayList<Integer> readFile(String pathName) {
         try {
             File file = new File(pathName);
             Scanner scanner = new Scanner(file);
             ArrayList<Integer> list = new ArrayList<>() ;
-            int integer = 0;
+            int integer;
             while(scanner.hasNextInt()) {
                 integer = scanner.nextInt();
                 list.add(integer);

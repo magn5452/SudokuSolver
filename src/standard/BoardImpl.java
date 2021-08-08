@@ -10,8 +10,8 @@ public class BoardImpl implements Board {
     private Map<Position, Integer> boardIntegerMap;
 
     public BoardImpl() {
-        FileReader reader = new FileReader();
-        ArrayList<Integer> list = reader.readFile("C:\\Users\\Magnus\\IdeaProjects\\SudokuSolver\\src\\Sudoku1.txt");
+
+        ArrayList<Integer> list = FileReader.readFile("C:\\Users\\Magnus\\IdeaProjects\\SudokuSolver\\src\\sudoku\\Sudoku1.txt");
         BoardMapConstructor boardMapConstructor = new BoardMapConstructor();
         this.boardIntegerMap = boardMapConstructor.setUpIntegerMap(list);
     }

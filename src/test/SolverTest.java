@@ -16,16 +16,16 @@ class SolverTest {
     private Board board1;
     private Board board2Solved;
     private Board board2;
-    Solver solver1;
-    Solver solver2;
+    private Solver solver1;
+    private Solver solver2;
 
 
     @BeforeEach
     void setUp() {
         board1 = new BoardImpl();
-        ArrayList<Integer> list2 = FileReader.readFile("C:\\Users\\Magnus\\IdeaProjects\\SudokuSolver\\src\\Sudoku2.txt");
+        ArrayList<Integer> list2 = FileReader.readFile("C:\\Users\\Magnus\\IdeaProjects\\SudokuSolver\\src\\sudoku\\Sudoku2.txt");
         board2 = new BoardImpl(list2);
-        ArrayList<Integer> list2Solved = FileReader.readFile("C:\\Users\\Magnus\\IdeaProjects\\SudokuSolver\\src\\Sudoku2Solved.txt");
+        ArrayList<Integer> list2Solved = FileReader.readFile("C:\\Users\\Magnus\\IdeaProjects\\SudokuSolver\\src\\sudoku\\Sudoku2Solved.txt");
         board2Solved = new BoardImpl(list2Solved);
         solver1 = new Solver(board1);
         solver2 = new Solver(board2);
@@ -59,7 +59,7 @@ class SolverTest {
     @Test
     void sudoku2IsCorrectlySolved(){
         solver2.solve();
-        assertTrue(board2Solved.equals(solver2.getOriginalBoard()));
+        assertEquals(board2Solved,solver2.getOriginalBoard());
     }
 
 }
